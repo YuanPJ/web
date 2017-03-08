@@ -14,23 +14,33 @@
 		"description": "Log output to console"
 	}
 */
-	"zzz": {
+	"comment": {
+    "prefix": "ccc",
+    "body": [
+        "<!--$1-->"
+		],
+    "description": "Make some comments.",
+    "scope": "text.html"
+	},
+
+	"structure": {
     "prefix": "zzz",
     "body": [
-    	"<!DOCTYPE html>",
-    	"<html>",
-      	"	<head>",
-        "		<meta charset=\"utf-8\">",
-        "		<title>$1</title>",
-        "		<link rel=\"stylesheet\" href=\"style.css\">",
-        "		<script src=\"script.js\"></script>",
-      	"	</head>",
-      	"	<body>",
-        "		<!-- page content -->",
-		"		$0",
-      	"	</body>",
-    	"</html>"
-        ],
+        "<!DOCTYPE html>",
+        "<html lang=\"$1en\">",
+        "\t<head>",
+        "\t\t<title>$2</title>",
+        "\t\t<meta charset=\"UTF-8\">",
+        "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+        "\t\t<link href=\"$3css/style.css\" rel=\"stylesheet\">",
+		"\t\t<script src=\"script.js\"></script>",
+        "\t</head>",
+        "\t<body>",
+		"\t\t<!-- page content -->",
+        "\t\t$0",
+        "\t</body>",
+        "</html>"
+		],
     "description": "Basic HTML5 structure.",
     "scope": "text.html"
 	}
