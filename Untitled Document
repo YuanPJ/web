@@ -1,0 +1,73 @@
+npm install --save-dev eslint
+npm install --save-dev eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y
+npm install --save-dev eslint-config-airbnb
+
+安裝 babel-cli, babel-preset-react, babel-preset-env, babel-plugin-transform-object-rest-spread
+寫 .babelrc，列出 presets 和 plugins
+寫對應的 compile npm scripts
+
+NPM
+npm i -g create-react-app
+Yarn
+yarn global add create-react-app
+Init Project
+create-react-app my-app
+cd my-app/
+npm start
+
+// .eslintrc.js
+module.exports = {
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ]
+};
+
+// in package.json
+{
+  ...
+  "scripts": {
+    "lint": "eslint ." // add this
+  },
+  ...
+}
+{
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production npm run clean && babel src -d lib --ignore __tests__ --copy-files",
+    "clean": "rimraf lib",
+    "lint": "eslint src scripts",
+    "start": "NODE_ENV=development nodemon src/index.js --exec babel-node",
+    "test": "npm run lint && npm run testonly",
+    "testonly": "NODE_ENV=test jest",
+    "testonly:watch": "npm run testonly -- --watch",
+  },
+  //...
+}
+
+
+// .eslintrc.js
+module.exports = {
+    extends: 'airbnb',
+    plugins: [
+        'react',
+        'jsx-a11y',
+        'import',
+    ],
+    rules: {
+      'no-console': 0,
+      'no-else-return': 0,
+    },
+};
+
+{
+  "presets": ["es2015", "react", "stage-0"],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}
+
