@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://yuanpj.github.io/hw1/my-app",
+  "homepage": "https://yuanpj.github.io/homework/hw1/my-app",
   "private": true,
   "dependencies": {
     "react": "^15.4.2",
