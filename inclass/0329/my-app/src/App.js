@@ -10,7 +10,7 @@ class App extends Component {
       <div className="App">
         <HelloWorld />
         <HelloWorld text={true} />
-        <HelloWorld text='B' />
+        <HelloWorld text='JJJ' />
         <Counter />
       </div>
     );
