@@ -4,10 +4,10 @@ import TodoItem from './TodoItem';
 
 class TodoList extends Component {
   render() {
-      return (
-          <div />
-        );
-    }
+    return (
+      <div />
+    );
+  }
 }
 
 export default TodoList;
