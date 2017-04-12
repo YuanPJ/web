@@ -3,7 +3,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import TextField from 'material-ui/TextField';
 import Snackbar from 'material-ui/Snackbar';
 import '../css/TodoApp.css';
-import Todolist from './TodoList';
+import TodoList from './TodoList';
 
 injectTapEventPlugin();
 
@@ -59,12 +59,19 @@ class TodoApp extends Component {
         <div>
           <h1>TODO</h1>
         </div>
+
         <TextField
           hintText="New List"
           value={this.state.newListName}
           onChange={this.handleChangeListName}
           onKeyUp={this.handleCreateList}
         />
+
+        {this.state.lists.map(todolist =>
+          <TodoList
+            content={todolist}
+          />)}
+
         <Snackbar
           open={this.state.openMessage}
           message={this.state.message}
